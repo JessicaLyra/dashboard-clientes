@@ -1,32 +1,77 @@
 # Dashboard de Clientes
 
-Projeto fullstack para gerenciamento de clientes, com autenticação segura e dashboard administrativo.
+Sistema fullstack para gerenciamento de clientes e seus sites, com autenticação segura e dashboard administrativo.
 
-## 🛠️ Tecnologias utilizadas
+Projeto desenvolvido com foco em boas práticas de frontend, backend e organização de código, simulando um sistema real de gestão utilizado por freelancers e agências.
 
-- Next.js (App Router)
-- TypeScript
-- Prisma ORM
-- PostgreSQL
-- bcrypt (criptografia de senha)
-- Git & GitHub
+---
 
-## 🚀 Funcionalidades atuais
+## 🛠️ Tecnologias Utilizadas
 
-- Autenticação de usuários
+- **Next.js** (App Router)
+- **React**
+- **TypeScript**
+- **Prisma ORM**
+- **SQLite** (ambiente local)
+- **bcrypt** (criptografia de senhas)
+- **Autenticação com sessão**
+- **Tailwind CSS**
+- **Git & GitHub**
+
+---
+
+## 🚀 Funcionalidades
+
+### 🔐 Autenticação
+- Login de usuários
 - Senhas criptografadas
-- API protegida
-- Integração com banco de dados via Prisma
+- Sessão protegida
+- Logout com remoção de sessão
 
-## 📌 Próximos passos
+### 👥 Clientes
+- Cadastro de clientes
+- Edição de dados
+- Exclusão com confirmação
+- Listagem em dashboard
 
-- CRUD de clientes
-- Dashboard com listagem e filtros
-- Melhorias na autenticação
-- Controle de acesso
+### 🌐 Sites por Cliente
+- Cadastro de sites vinculados a clientes
+- Edição de site
+- Exclusão de site
+- Controle de status do site:
+  - 🟢 Ativo
+  - 🔴 Fora do ar
+  - 🟡 Manutenção
+- Exibição visual de status no dashboard
 
-## ▶️ Como rodar o projeto
+### 📊 Dashboard
+- Visualização organizada por cliente
+- Sites agrupados por cliente
+- Interface limpa e intuitiva
+- Fluxo similar a sistemas administrativos reais
+
+---
+
+## 🧠 Arquitetura
+
+- API construída com **Next.js Route Handlers**
+- Prisma como camada de acesso ao banco
+- Separação clara entre:
+  - Frontend
+  - Backend
+  - Regras de negócio
+- Código preparado para expansão (roles, permissões, métricas, etc.)
+
+---
+
+## ▶️ Como rodar o projeto localmente
 
 ```bash
+# Instalar dependências
 npm install
+
+# Rodar migrations do Prisma
+npx prisma migrate dev
+
+# Iniciar o servidor
 npm run dev
