@@ -16,6 +16,10 @@ export default function Home() {
   const [clientToDelete, setClientToDelete] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
+async function handleLogout() {
+  await fetch('/api/logout', { method: 'POST' });
+  window.location.href = '/login';
+}
 
   // Buscar clientes ao abrir a página
   useEffect(() => {
@@ -155,6 +159,13 @@ const [error, setError] = useState('');
   <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
     <main style={{ padding: 40 }}>
       <h1 className="text-gray-800 font-bold text-center mb-5 text-2xl">Cadastro de Clientes</h1>
+      <button
+          onClick={handleLogout}
+          className="text-sm bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+        >
+          Sair
+        </button>
+
 {error && (
   <p className="text-red-600 text-sm">{error}</p>
 )
